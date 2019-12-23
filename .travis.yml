@@ -8,12 +8,16 @@ script:
     - docker run -e CI=true michalmatuszek/docker-react npm run test
 deploy:
     provider: elasticbeanstalk
-    region: "us-west-2"
+    region: "eu-central-1"
     app: "docker"
     env: "Docker-env"
-    bucket_name: ""
+    bucket_name: "elasticbeanstalk-eu-central-1-896090029572"
     bucket_path: "docker"
     on:
         branch: master
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
+
+
+
+    http://michalm.eu-central-1.elasticbeanstalk.com/
